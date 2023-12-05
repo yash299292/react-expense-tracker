@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -25,7 +25,7 @@ const ExpenseBox = styled.div`
   gap: 10px;
   width: 135px;
   & span {
-    color: ${(props) => (props.isIncome ? "green" : "red")};
+    color: ₹{(props) => (props.isIncome ? "green" : "red")};
     font-weight: bold;
     font-size: 20px;
   }
@@ -58,7 +58,7 @@ const AddTransaction = styled.div`
 `;
 const AddTransactionContainer = styled.div`
   font-size: 15px;
-  display: ${(props) => (props.isAddTxnVisible ? "flex" : "none")};
+  display: ₹{(props) => (props.isAddTxnVisible ? "flex" : "none")};
   color: #0d1d2c;
   flex-direction: column;
   border-radius: 4px;
@@ -146,7 +146,7 @@ const OverViewComponent = (props) => {
   return (
     <Container>
       <BalanceBox>
-        Balance: ${props.income - props.expense}
+        Balance: ₹{props.income - props.expense}
         <AddTransaction onClick={() => toggleAddTXn((isVisible) => !isVisible)}>
           {isAddTxnVisible ? "CANCEL" : "ADD"}
         </AddTransaction>
@@ -162,10 +162,10 @@ const OverViewComponent = (props) => {
       )}
       <ExpenseContainer>
         <ExpenseBox>
-          Expense<span>${props.expense}</span>
+          Expense<span>₹{props.expense}</span>
         </ExpenseBox>
         <ExpenseBox isIncome={true}>
-          Income<span>${props.income}</span>
+          Income<span>₹{props.income}</span>
         </ExpenseBox>
       </ExpenseContainer>
     </Container>

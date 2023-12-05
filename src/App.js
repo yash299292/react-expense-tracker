@@ -28,7 +28,7 @@ const Header = styled.div`
 const App = () => {
   return (
     <Container>
-      <Header>Expense Tracker</Header>
+      <Header>Personal Finance Management App</Header>
       <HomeComponent />
     </Container>
   );
